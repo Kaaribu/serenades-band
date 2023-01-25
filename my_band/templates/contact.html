@@ -1,0 +1,73 @@
+{% extends 'header.html' %}
+{% load static %}
+<!-- Container (Contact Section) -->
+
+{% block content %}
+{% if user.is_authenticated %}
+<div class="container">
+  <h3 class="text-center">Contact Us</h3>
+  <p class="text-center"><em>We love our fans! Contact us directly if you have any questions</em></p>
+  <div class="row test">
+      <br><br/>
+    <div class="col-md-4">
+      <p>Fan? Drop a note.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span>Jo'burg, ZA</p>
+      <p><span class="glyphicon glyphicon-phone"></span>Phone: +27 11-555-0011</p>
+      <p><span class="glyphicon glyphicon-envelope"></span>Email: mail@mail.com</p>
+    </div>
+      <br><br/>
+      <br><br/>
+	<div style="margin:80px">
+		<form method="post">
+        {% csrf_token %}
+            {{contact_form.as_p}}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+       <h3 class="text-center">Messages from The Blog</h3>
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#home">Joe</a></li>
+  <li><a data-toggle="tab" href="#menu1">Ben</a></li>
+  <li><a data-toggle="tab" href="#menu2">Alina</a></li>
+</ul>
+
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <h2>Joe Smith, Lead Guitarist</h2>
+    <p>Hey everyone, it's Joe here, lead guitarist for The Electric Serenades. Just wanted to thank you all for your support
+        and for coming out to our shows. We've been having a blast performing for all of you, and we can't wait to bring you more
+        music in the future.<br><br/>
+        We've been working on some new material and are excited to share it with you soon. In the meantime, keep an eye on our
+        social media and website for updates on upcoming shows and releases. Thanks again for all your support, and we hope to
+        see you at a show soon!</p>
+  </div>
+  <div id="menu1" class="tab-pane fade">
+    <h2>Ben Strawman, Sound Engineer</h2>
+    <p>Hey everyone, it's Ben Strawman here, the stage sound engineer for The Electric Serenades. Just wanted to give a shout out to all
+        the fans who have come out to our shows lately. It's been an absolute pleasure working with this talented band and bringing
+        their sound to life on stage.<br><br/>
+        As the sound engineer, it's my job to make sure that every note and harmony comes through clearly and powerfully for the audience.
+        I take pride in my work and strive to create the best possible listening experience for you all.<br><br/>
+        Thank you for your support and for helping to make our shows a success. We hope to see you at a show soon and bring you an even
+        better sound experience. Keep an eye on our website and social media for updates on upcoming shows and releases. Thanks again
+        for all your support!</p>
+  </div>
+  <div id="menu2" class="tab-pane fade">
+    <h2>Alina Sips, Lead Singer</h2>
+    <p>Hey everyone, it's Miss Sips here, the lead singer of The Electric Serenades. Just wanted to say thank you to all the fans who
+        have come out to our shows and supported us throughout the years. It's been an amazing journey so far, and we feel
+        truly blessed to have such a dedicated and passionate fan base.<br><br/>
+        As the lead singer, I always try to bring my best to the stage and connect with the audience through my lyrics
+        and performances. It's a thrill to see you all singing along and getting lost in the music with us.<br><br/>
+        We've been working on some new material and can't wait to share it with you. Keep an eye on our website and social media for
+        updates on upcoming shows and releases. Thanks again for all your support, and we hope to see you at a show soon!</p>
+  </div>
+</div>
+  </div>
+    <div class="col-sm-12"></div>
+    <br><br/>
+    <br><br/>
+
+</div>
+ {% endif %}
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="text-center">LATEST ALBUMS</h3><br><br/>
+            <p class="text-center" style="font-size: large">Check out the latest music available on our online store! From new releases by The Electric Serenades to classic albums by your favorite artists,
+                we've got something for every music lover. All of our products are high-quality and shipped directly to you, so you can enjoy the best in music from
+                the comfort of your own home. Don't miss out on these hot new releases – add them to your collection today!
+            </p>
+    </div>
+    <!-- insert a section for a banner -->
+   <div class="container">
+    <div class="row">
+      {% for album in albums %}
+        <div class="col-sm-3">
+          <div class="card">
+              <img class="card-img-top" src="{% static 'img/bg-img/wec.jpg' %}" style="width: 200px;height: 200px" alt="{{ album.title }} album cover">
+            <div class="card-body">
+              <h5 class="card-title">{{ album.title }}</h5>
+              <p class="card-text">{{ album.artist }}</p>
+                <p class="card-text">{{ album.genre }}</p>
+                <p class="card-text">{{ album.price }}</p>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#myDiscModal">View Album</button>
+                <div class="row" style="margin-bottom:30px;"></div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+
+ <!-- Modal -->
+<div class="modal fade" id="myDiscModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4><span class="glyphicon glyphicon-lock"></span> Albums</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <label>Artist: The Electric Serenades </label>
+          </div>
+          <div class="form-group">
+            <label>Albums: Moonlight </label>
+          </div>
+            <!-- center the image inside a modal-->
+            <div class="container">
+                <img src="{% static 'img/bg-img/a1.jpg' %}" style="width: 300px;height: 300px" alt="Moonlight album cover">
+            </div>
+          <button type="submit" class="btn btn-block">Order
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+        <p>Need <a href="{% url 'contact' %}">help?</a></p>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
+   </div>
+
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}wq"></script>
+{% endif %}
+{% endblock %}
+

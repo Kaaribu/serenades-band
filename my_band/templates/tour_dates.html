@@ -1,0 +1,87 @@
+{% extends 'header.html' %}
+{% load static %}
+{% block content %}
+{% if user.is_authenticated %}
+<div class="bg-1">
+  <div class="container">
+    <h3 class="text-center">TOUR DATES</h3>
+    <p class="text-center">The Electric Serenades are a band that truly stands out in the local music scene.
+        Their unique blend of indie rock and psychedelic pop is guaranteed to get you moving and leave you wanting more.
+        Frontman Joe Smith's soulful vocals and catchy guitar riffs are complemented perfectly by the tight rhythms and harmonies of the rest of the band.
+        The Electric Serenades have a reputation for putting on high-energy shows that leave audiences mesmerized, and their latest EP, "Midnight Dreams," showcases their talent and range.<br><br/>
+        With a bright future ahead of them, The Electric Serenades are a band you don't want to miss. If you're a fan of indie rock, psychedelic pop, or just great music in general,
+        be sure to check them out and see for yourself what all the buzz is about. So, if you want to be a part of the Electric Serenades family, don't hesitate to get in touch and join us at our next show.<br><br/>
+        <strong>Remember to book your tickets!</strong></p><br><br/>
+
+    <ul class="list-group">
+        <li class="list-group-item">February <span class="label label-danger">Sold Out!</span></li>
+      <li class="list-group-item">March<span class="label label-danger">Sold Out!</span> </li>
+      <li class="list-group-item">April<span class="label label-danger">13</span> </li>
+    </ul>
+  </div>
+    <div class="row text-center">
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="{% static 'img/core-img/joburg.jpeg' %}" style="width: 320px;height: 250px" alt="Joburg">
+      <p><strong>Joburg</strong></p>
+      <p>Fri. 28 April 2023</p>
+      <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="{% static 'img/core-img/dbn.jpeg' %}" style="width: 320px;height: 250px" alt="Durban">
+      <p><strong>Durban</strong></p>
+      <p>Sat. 30 September 2023</p>
+      <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="thumbnail">
+      <img src="{% static 'img/core-img/cpt.jpeg' %}" style="width: 320px;height: 250px" alt="Capetown">
+      <p><strong>Capetown</strong></p>
+      <p>Sat. 29 November 2023</p>
+      <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
+    </div>
+
+      <!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4><span class="glyphicon glyphicon-lock"></span> Tickets</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <label for="psw"><span class="glyphicon glyphicon-shopping-cart"></span> Tickets, R700 per person</label>
+            <input type="number" class="form-control" id="psw" placeholder="How many?">
+          </div>
+          <div class="form-group">
+            <label for="usrname"><span class="glyphicon glyphicon-user"></span> Send To</label>
+            <input type="text" class="form-control" id="usrname" placeholder="Enter email">
+          </div>
+          <button type="submit" class="btn btn-block">Pay
+            <span class="glyphicon glyphicon-ok"></span>
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+        <p>Need <a href="{% url 'contact' %}">help?</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+</div>
+    {% endif %}
+{% endblock %}
+
+

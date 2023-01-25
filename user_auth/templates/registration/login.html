@@ -1,0 +1,44 @@
+{% extends "header.html" %}
+{% load static %}
+{% load crispy_forms_filters %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+    <section class="contact-area section-padding-100 bg-img bg-overlay bg-fixed has-bg-img" style="background-image: url({% static 'img/bg-img/iStock.jpg' %});">
+
+<!--Login-->
+<section class="login-area section-padding-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="login-content">
+                        <h1 style="color: whitesmoke;">Welcome Back</h1>
+                        <!-- Login Form -->
+                        <div class="login-form">
+                              <form action="{% url 'user_auth:authenticate_user' %}" method="POST">
+                                  {% csrf_token %}
+                                  {{ login_form|crispy }}
+                                <button class="btn btn-primary" type="submit">Login</button>
+                              </form>
+                            <br><br/>
+                            {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}" role="alert">
+                            {{ message }}
+                        </div>
+                            {% endfor %}
+                            <br><br/>
+                            <br><br/><br><br/>
+                            <p class="text-center" style="color: white; font-size: large">Don't have an account? <a href="{% url 'register' %}">Create an account</a>.</p>
+                            <div class="container" style="margin-bottom:30px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <
+</section>
+{% endblock %}
+
