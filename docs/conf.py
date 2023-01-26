@@ -11,6 +11,7 @@ import django
 
 sys.path.insert(0, os.path.abspath('..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'my_band.settings'
+django.setup()
 
 project = 'My Band'
 copyright = '2023, Karabo Masalesa'
