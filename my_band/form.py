@@ -12,11 +12,11 @@ class NewUserForm(UserCreationForm):
     for a music band website.
 
     Attributes:
-    - band_name (CharField): The name of the band associated with the user.
-    - bio (TextField): A brief bio or description of the band.
-    - genre (ChoiceField): The genre of music the band plays.
-    - website (URLField): The band's official website.
-    - image (ImageField): An image of the band.
+    - username: the username of the user
+    - fullname: the full name of the user
+    - email: the email of the user
+    - password1: the password of the user
+    - password2: the password of the user, repeated
 
     Methods:
     - save(commit=True): Saves the form and creates a new user.
