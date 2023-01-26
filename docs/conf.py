@@ -11,20 +11,18 @@ import django
 
 sys.path.insert(0, os.path.abspath('..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'my_band.settings'
-django.setup()
 
 project = 'My Band'
 copyright = '2023, Karabo Masalesa'
 author = 'Karabo Masalesa'
-release = '00.00.01'
+release = '00.0.01'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.viewcode',
-              'sphinx.ext.napoleon'
-              ]
+              'sphinx.ext.napoleon',
+              'sphinx.ext.viewcode']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
