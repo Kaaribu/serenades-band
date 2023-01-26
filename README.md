@@ -15,7 +15,7 @@ To install the application, follow these steps:
 
 1. Clone the repository:
 
-    git clone https://github.com/YOUR_USERNAME/myband-django.git
+    git clone https://github.com/Kaaribu/my-band.git
 
 2. Create a virtual environment and activate it:
 
@@ -32,11 +32,11 @@ If you prefer to use Docker, you can also run the application using a pre-built 
 
 1. Pull the image from Docker Hub:
 
-    docker pull YOUR_USERNAME/myband-django
+    docker pull kaaribu/my-band
 
 2. Run the container:
 
-    docker run -p 8000:8000 YOUR_USERNAME/myband-django
+    docker run -p 8000:8000 kaaribu/myband-django
 
 3. Open your browser and navigate to http://localhost:8000 to access the application.
 
@@ -53,6 +53,6 @@ Note: Ensure that the container has the correct environment variables set and th
 
 ## Repository
 
-https://github.com/Kaaribu/myband-django
+https://github.com/Kaaribu/my-band
 
 
