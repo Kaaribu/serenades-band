@@ -67,9 +67,21 @@ class NewUserForm(UserCreationForm):
 
 
 class LoginForm(forms.Form):
+    """
+    LoginForm is a subclass of Django's built-in Form, with additional fields specific to logging in a user
+    for a music band website.
+
+    Attributes:
+    - username: the username of the user
+    - password: the password of the user
+
+    Methods:
+        - clean: checks if the username and password are valid
+        - init: initializes the form
+        - save(commit=True): Saves the form and creates a new user.
+    """
     username = forms.CharField(label='Username', max_length=30)
     password = forms.CharField(label='Password', max_length=30, widget=forms.PasswordInput)
-
 
     def clean(self):
         username = self.cleaned_data.get('username')
