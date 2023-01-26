@@ -105,7 +105,20 @@ class Ticket(models.Model):
 
 
 class Order(models.Model):
+    """
+        Class Order(models.Model) represents an order.
 
+        Attributes:
+            user (ForeignKey): The user that made the order.
+            album (ForeignKey): The album that was ordered.
+            date_ordered (DateTimeField): The date and time the order was made.
+            quantity (IntegerField): The quantity of the album that was ordered.
+            is_complete (BooleanField): Whether the order is complete or not.
+
+        Methods:
+            place_order(self): Saves the order.
+            get_orders_by_customer(self, customer_id): Returns the orders of a customer.
+    """
     user = models.ForeignKey(EndUser, on_delete=models.SET_NULL, null=True)
     album = models.ForeignKey(Album, on_delete=models.SET_NULL, null=True)
     date_ordered = models.DateField(auto_now_add=True, null=True)
