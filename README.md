@@ -19,8 +19,8 @@ To install the application, follow these steps:
 
 2. Create a virtual environment and activate it:
 
-    python3 -m venv venv
-    source venv/bin/activate (for Windows) **or** source ~/.bash_profile (for Linux and MacOS)
+    - python3 -m venv venv
+    - source venv/bin/activate (for Windows) **or** source ~/.bash_profile (for Linux and MacOS)
 
 3. Install the dependencies:
 
