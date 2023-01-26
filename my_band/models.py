@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 # set a default value for the title field
 
