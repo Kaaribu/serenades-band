@@ -19,6 +19,7 @@ class NewUserForm(UserCreationForm):
     - password2: the password of the user, repeated
 
     Methods:
+    - init: initializes the form
     - save(commit=True): Saves the form and creates a new user.
     """
     fullname = forms.CharField(max_length=100, required=True, help_text='Required')
