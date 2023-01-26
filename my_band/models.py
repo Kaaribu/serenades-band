@@ -31,10 +31,17 @@ class Album(models.Model):
     def __str__(self):
         return self.title + ' - ' + self.artist + ' - ' + self.genre
 
+
 class Image(models.Model):
+    """
+    Class Image(models.Model) represents an image of an album.
+
+    Attributes:
+        album (ForeignKey): The album that the image belongs to.
+        image_file (ImageField): The image of the album.
+    """
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     image_file = models.ImageField(upload_to='images/', null=True, blank=True)
-
 
 
 class EndUser(models.Model):
