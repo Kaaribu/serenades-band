@@ -58,6 +58,13 @@ def register(request):
 
 
 def login_view(request):
+    """
+    login_view is a view function that renders the login page.
+
+    :param request: the request object or login form if the user has already registered
+
+    :return: the login page
+    """
     if request.method == "POST":
         form = LoginForm(request, data=request.POST)
         if form.is_valid():
