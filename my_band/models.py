@@ -16,10 +16,10 @@ class Album(models.Model):
     def __str__(self):
         return self.title + ' - ' + self.artist + ' - ' + self.genre
 
+
 class Image(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     image_file = models.ImageField(upload_to='images/', null=True, blank=True)
-
 
 
 class EndUser(models.Model):
