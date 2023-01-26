@@ -45,6 +45,18 @@ class Image(models.Model):
 
 
 class EndUser(models.Model):
+    """
+        Class EndUser(models.Model) represents an end user of the website.
+
+       Attributes:
+           name (CharField): The name of the end user.
+           email (EmailField): The email of the end user.
+           phone (CharField): The phone number of the end user.
+           address (CharField): The address of the end user.
+
+       Methods:
+           str(self): Returns the name of the end user as a string.
+    """
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
