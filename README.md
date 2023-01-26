@@ -1,6 +1,6 @@
-# Django Band Website
+# My Band
 
-Welcome to the Django Band Website! This is a Django-based web application that allows users to explore the band's music and upcoming events.
+Welcome to the My Band (The Electric Serenades) Website! This is a Django-based web application that allows users to explore the band's music and upcoming events.
 
 ## Prerequisites
 
