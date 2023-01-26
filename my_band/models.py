@@ -85,7 +85,17 @@ class TicketsStatus(models.Model):
 
 
 class Ticket(models.Model):
+    """
+        Class Ticket(models.Model) represents a ticket.
 
+        Attributes:
+            title (CharField): The title of the ticket.
+            assignee (ForeignKey): The assignee of the ticket.
+            status (CharField): The status of the ticket.
+            description (CharField): The description of the ticket.
+            created_at (DateTimeField): The date and time the ticket was created.
+            updated_at (DateTimeField): The date and time the ticket was updated.
+    """
     title = models.CharField(max_length=100)
     assignee = models.ForeignKey(EndUser, on_delete=models.CASCADE, null=True, blank=True)
     status = models.CharField(max_length=100, choices=TicketsStatus.choices, default=TicketsStatus.to_do)
