@@ -43,9 +43,9 @@ If you prefer to use Docker, you can also run the application using a pre-built 
 Note: Ensure that the container has the correct environment variables set and the correct ports exposed.
 
 ## Built With
-Python/Djnago 
-HTML 
-CSS
+- Python/Djnago 
+- HTML 
+- CSS
 
 ## Credits
 
