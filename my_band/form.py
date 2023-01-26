@@ -3,11 +3,25 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-
-
 # Create your forms here.
 
+
 class NewUserForm(UserCreationForm):
+    """
+    NewUserForm is a subclass of Django's built-in UserCreationForm, with additional fields specific to creating a user
+    for a music band website.
+
+    Attributes:
+    - username: the username of the user
+    - fullname: the full name of the user
+    - email: the email of the user
+    - password1: the password of the user
+    - password2: the password of the user, repeated
+
+    Methods:
+    - init: initializes the form
+    - save(commit=True): Saves the form and creates a new user.
+    """
     fullname = forms.CharField(max_length=100, required=True, help_text='Required')
 
     class Meta:
@@ -53,9 +67,21 @@ class NewUserForm(UserCreationForm):
 
 
 class LoginForm(forms.Form):
+    """
+    LoginForm is a subclass of Django's built-in Form, with additional fields specific to logging in a user
+    for a music band website.
+
+    Attributes:
+    - username: the username of the user
+    - password: the password of the user
+
+    Methods:
+        - clean: checks if the username and password are valid
+        - init: initializes the form
+        - save(commit=True): Saves the form and creates a new user.
+    """
     username = forms.CharField(label='Username', max_length=30)
     password = forms.CharField(label='Password', max_length=30, widget=forms.PasswordInput)
-
 
     def clean(self):
         username = self.cleaned_data.get('username')
@@ -96,6 +122,18 @@ class LoginForm(forms.Form):
 
 
 class OrderForm(forms.Form):
+    """
+       OrderForm is a subclass of Django's built-in Form, with additional fields specific to ordering a product
+       for a music band website.
+
+       Attributes:
+       - name: the name of the user
+       - email: the email of the user
+       - message: the message of the user
+
+       Methods:
+           - init: initialize the form
+       """
     name = forms.CharField(max_length=100, required=True, help_text='Required')
     email = forms.EmailField(max_length=150, required=True)
     message = forms.CharField(max_length=300, required=True, help_text='Required')
@@ -112,6 +150,19 @@ class OrderForm(forms.Form):
 
 
 class ContactForm(forms.Form):
+    """
+         ContactForm is a subclass of Django's built-in Form, with additional fields specific to contacting a user
+            for a music band website.
+
+            Attributes:
+                - first_name: the first name of the user
+                - last_name: the last name of the user
+                - email: the email of the user
+                - message: the message of the user
+
+            Methods:
+                - init: initialize the form
+    """
     first_name = forms.CharField(max_length=50, required=True, help_text='Required')
     last_name = forms.CharField(max_length=50, required=True, help_text='Required')
     email = forms.EmailField(max_length=150, required=True)

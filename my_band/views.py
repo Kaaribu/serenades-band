@@ -13,6 +13,7 @@ def index(request):
     if request.user.is_authenticated:
         return render(request, 'index.html')
 
+
 @login_required(login_url='/user_auth/')
 def tours(request):
     if request.user.is_authenticated:
@@ -21,6 +22,13 @@ def tours(request):
 
 @login_required(login_url='/user_auth/')
 def discography(request):
+    """
+    discography is a view function that renders the discography page.
+
+    :param request: the request object
+
+    :return: the discography page
+    """
     data = Image.objects.all()
     albums = Album.objects.all()
     context = {'data': data, 'albums': albums}
@@ -29,6 +37,13 @@ def discography(request):
 
 
 def register(request):
+    """
+    register is a view function that renders the register page.
+
+    :param request: the request object or login form if the user has already registered
+
+    :return: the register page
+    """
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
@@ -43,6 +58,13 @@ def register(request):
 
 
 def login_view(request):
+    """
+    login_view is a view function that renders the login page.
+
+    :param request: the request object or login form if the user has already registered
+
+    :return: the login page
+    """
     if request.method == "POST":
         form = LoginForm(request, data=request.POST)
         if form.is_valid():
@@ -56,8 +78,16 @@ def login_view(request):
                 messages.error(request,"Invalid username or password.")
     return render(request=request, template_name="registration/login.html", context={"login_form":form})
 
+
 @login_required(login_url='/user_auth/')
 def contact_form(request):
+    """
+    contact_form is a view function that renders the contact form page.
+
+    :param request: the request object
+
+    :return: the contact form page
+    """
     if request.user.is_authenticated:
         if request.method == 'POST':
             form = ContactForm(request.POST)
