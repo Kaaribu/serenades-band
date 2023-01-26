@@ -4,10 +4,10 @@ Welcome to the Django Band Website! This is a Django-based web application that 
 
 ## Prerequisites
 
-1. Git
-2. Python 3.8 or higher
-3. pip
-4. Docker
+- Git
+- Python 3.8 or higher
+- pip
+- Docker
 
 ## Installation
 
