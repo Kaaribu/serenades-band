@@ -5,6 +5,21 @@ from django.db import models
 
 
 class Album(models.Model):
+    """
+    Class Album(models.Model) represents an album of a music band.
+
+    Attributes:
+    id (AutoField): the id of the album
+    title (CharField): The name of the album.
+    artist (CharField): The name of the artist.
+    genre (CharField): The genre of the album.
+    release_date (DateField): The release date of the album.
+    price (DecimalField): The price of the album.
+    is_favorite (BooleanField): Whether the album is a favorite or not.
+
+    Methods:
+    str(self): Returns the name of the album as a string.
+    """
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
     artist = models.CharField(max_length=100, null=True)
