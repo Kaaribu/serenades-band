@@ -10,7 +10,8 @@ import sys
 import django
 
 sys.path.insert(0, os.path.abspath('..'))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'my_band.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'django_capstone.settings'
+django.setup()
 
 project = 'My Band'
 copyright = '2023, Karabo Masalesa'
