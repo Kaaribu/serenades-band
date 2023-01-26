@@ -3,11 +3,24 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
-
-
 # Create your forms here.
 
+
 class NewUserForm(UserCreationForm):
+    """
+    NewUserForm is a subclass of Django's built-in UserCreationForm, with additional fields specific to creating a user
+    for a music band website.
+
+    Attributes:
+    - band_name (CharField): The name of the band associated with the user.
+    - bio (TextField): A brief bio or description of the band.
+    - genre (ChoiceField): The genre of music the band plays.
+    - website (URLField): The band's official website.
+    - image (ImageField): An image of the band.
+
+    Methods:
+    - save(commit=True): Saves the form and creates a new user.
+    """
     fullname = forms.CharField(max_length=100, required=True, help_text='Required')
 
     class Meta:
