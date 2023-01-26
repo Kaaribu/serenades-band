@@ -150,6 +150,19 @@ class OrderForm(forms.Form):
 
 
 class ContactForm(forms.Form):
+    """
+         ContactForm is a subclass of Django's built-in Form, with additional fields specific to contacting a user
+            for a music band website.
+
+            Attributes:
+                - first_name: the first name of the user
+                - last_name: the last name of the user
+                - email: the email of the user
+                - message: the message of the user
+
+            Methods:
+                - init: initialize the form
+    """
     first_name = forms.CharField(max_length=50, required=True, help_text='Required')
     last_name = forms.CharField(max_length=50, required=True, help_text='Required')
     email = forms.EmailField(max_length=150, required=True)
