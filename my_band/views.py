@@ -37,7 +37,13 @@ def discography(request):
 
 
 def register(request):
+    """
+    register is a view function that renders the register page.
 
+    :param request: the request object or login form if the user has already registered
+
+    :return: the register page
+    """
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
