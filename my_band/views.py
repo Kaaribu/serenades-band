@@ -13,6 +13,7 @@ def index(request):
     if request.user.is_authenticated:
         return render(request, 'index.html')
 
+
 @login_required(login_url='/user_auth/')
 def tours(request):
     if request.user.is_authenticated:
@@ -21,6 +22,13 @@ def tours(request):
 
 @login_required(login_url='/user_auth/')
 def discography(request):
+    """
+    discography is a view function that renders the discography page.
+
+    :param request: the request object
+
+    :return: the discography page
+    """
     data = Image.objects.all()
     albums = Album.objects.all()
     context = {'data': data, 'albums': albums}
@@ -29,6 +37,7 @@ def discography(request):
 
 
 def register(request):
+
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
