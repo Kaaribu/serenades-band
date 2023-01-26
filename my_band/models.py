@@ -67,6 +67,16 @@ class EndUser(models.Model):
 
 
 class TicketsStatus(models.Model):
+    """
+        Class TicketsStatus(models.Model) represents the status of a ticket.
+
+        Attributes:
+            choices (CharField): The status of the ticket.
+            to_do (BooleanField): Whether the ticket is to do or not.
+            in_progress (BooleanField): Whether the ticket is in progress or not.
+            in_review (BooleanField): Whether the ticket is in review or not.
+            done (BooleanField): Whether the ticket is done or not.
+    """
     choices = None
     to_do = 'To do'
     in_progress = 'In progress'
@@ -75,6 +85,7 @@ class TicketsStatus(models.Model):
 
 
 class Ticket(models.Model):
+
     title = models.CharField(max_length=100)
     assignee = models.ForeignKey(EndUser, on_delete=models.CASCADE, null=True, blank=True)
     status = models.CharField(max_length=100, choices=TicketsStatus.choices, default=TicketsStatus.to_do)
@@ -84,6 +95,7 @@ class Ticket(models.Model):
 
 
 class Order(models.Model):
+
     user = models.ForeignKey(EndUser, on_delete=models.SET_NULL, null=True)
     album = models.ForeignKey(Album, on_delete=models.SET_NULL, null=True)
     date_ordered = models.DateField(auto_now_add=True, null=True)
