@@ -122,6 +122,18 @@ class LoginForm(forms.Form):
 
 
 class OrderForm(forms.Form):
+    """
+       OrderForm is a subclass of Django's built-in Form, with additional fields specific to ordering a product
+       for a music band website.
+
+       Attributes:
+       - name: the name of the user
+       - email: the email of the user
+       - message: the message of the user
+
+       Methods:
+           - init: initialize the form
+       """
     name = forms.CharField(max_length=100, required=True, help_text='Required')
     email = forms.EmailField(max_length=150, required=True)
     message = forms.CharField(max_length=300, required=True, help_text='Required')
