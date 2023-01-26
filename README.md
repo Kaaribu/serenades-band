@@ -36,7 +36,7 @@ If you prefer to use Docker, you can also run the application using a pre-built 
 
 2. Run the container:
 
-    docker run -p 8000:8000 kaaribu/myband-django
+    docker run -p 8000:8000 kaaribu/my-band
 
 3. Open your browser and navigate to http://localhost:8000 to access the application.
 
