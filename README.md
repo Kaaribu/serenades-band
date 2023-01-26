@@ -15,7 +15,7 @@ To install the application, follow these steps:
 
 1. Clone the repository:
 
-    git clone https://github.com/YOUR_USERNAME/django-band-website.git
+    git clone https://github.com/YOUR_USERNAME/myband-django.git
 
 2. Create a virtual environment and activate it:
 
