@@ -15,16 +15,16 @@ To install the application, follow these steps:
 
 1. Clone the repository:
 
-    git clone 'https://github.com/Kaaribu/my-band.git'
+    `git clone https://github.com/Kaaribu/my-band.git`
 
 2. Create a virtual environment and activate it:
 
-    - 'python3 -m venv venv'
-    - 'source venv/bin/activate' *(for Windows)* **or** 'source ~/.bash_profile' *(for Linux and MacOS)*
+    - `python3 -m venv venv`
+    - `source venv/bin/activate` *(for Windows)* **or** `source ~/.bash_profile` *(for Linux and MacOS)*
 
 3. Install the dependencies:
 
-    'pip install -r requirements.txt'
+    `pip install -r requirements.txt`
 
 ## Using Docker
 
@@ -32,13 +32,13 @@ If you prefer to use Docker, you can also run the application using a pre-built 
 
 1. Pull the image from Docker Hub:
 
-    'docker pull kaaribu/my-band'
+    `docker pull kaaribu/my-band`
 
 2. Run the container:
 
-    'docker run -p 8000:8000 kaaribu/my-band'
+    `docker run -p 8000:8000 kaaribu/my-band`
 
-3. Open your browser and navigate to 'http://localhost:8000' to access the application.
+3. Open your browser and navigate to `http://localhost:8000` to access the application.
 
 Note: Ensure that the container has the correct environment variables set and the correct ports exposed.
 
