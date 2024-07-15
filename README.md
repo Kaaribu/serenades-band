@@ -1,4 +1,4 @@
-# My Band
+# Electric Serenades Rock Band
 
 Welcome to the The Electric Serenades Website! This is a Django-based web application that allows users to explore the band's music and upcoming events.
 
